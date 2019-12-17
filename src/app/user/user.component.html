@@ -1,0 +1,26 @@
+
+        <div class="example-box" cdkDrag style="margin-left: 1180px">
+            <div *ngIf="info.token; else loggedOut">
+                <h5 class="text-primary">Your Information</h5>
+                <p>
+                    <strong>Username:</strong> {{info.username}}<br/>
+                    <strong>Roles:</strong> {{info.roles}}<br/>
+                    <strong>Token:</strong> {{info.token}}.
+                </p>
+                <button class="btn btn-danger" (click)="logout()">Logout</button>
+            </div>
+            <ng-template #loggedOut>
+                Please login.
+            </ng-template>
+        </div>
+        <a  routerLink="auth/login"style="color: mediumvioletred; margin-left: 10px;text-decoration: none;" class="docs-button mat-raised-button" mat-raised-button=""
+           tabindex="0" aria-disabled="false"
+        ><mat-icon aria-hidden="false" aria-label="Example home icon">star half</mat-icon>
+            <span
+                    class="mat-button-wrapper">Login</span>
+
+            <!--            <div class="mat-button-ripple mat-ripple" matripple=""></div>-->
+            <!--            <div class="mat-button-focus-overlay"></div>-->
+        </a>
+
+
