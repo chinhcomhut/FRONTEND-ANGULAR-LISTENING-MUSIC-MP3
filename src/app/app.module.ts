@@ -27,10 +27,14 @@ import { UserComponent } from './user/user.component';
 import { PmComponent } from './pm/pm.component';
 import { AdminComponent } from './admin/admin.component';
 import { httpInterceptorProviders} from './auth/auth-interceptor';
-import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatFormFieldModule} from '@angular/material/form-field';
 import { UploadAvatarComponent } from './component/upload/upload-avatar/upload-avatar.component';
 import { UploadFileComponent } from './component/upload/upload-file/upload-file.component';
 // import { UploadFormComponent } from './uploads/upload-form/upload-form.component';
+import {AngularFireStorageModule} from '@angular/fire/storage';
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment';
+import { CreateSongComponent } from './component/songManager/create-song/create-song.component';
 
 export const appRoutes: Routes = [
     {path: '', component: HomeComponent, data: {title: 'Home'}},
@@ -61,12 +65,21 @@ export const appRoutes: Routes = [
         redirectTo: 'home',
         pathMatch: 'full'
     },
+    {
+        path: 'uploadfile',
+        component: UploadFileComponent
+    },
+    {
+        path: 'createmusic',
+        component: CreateSongComponent
+    }
 ];
 
 @NgModule({
     declarations: [
         // tslint:disable-next-line:max-line-length
-        AppComponent, HomeComponent, GettingStartedComponent, ListComponent, LoginComponent, RegisterComponent, UserComponent, PmComponent, AdminComponent, UploadAvatarComponent, UploadFileComponent,
+        AppComponent, HomeComponent, GettingStartedComponent, ListComponent, LoginComponent, RegisterComponent,
+        UserComponent, PmComponent, AdminComponent, UploadAvatarComponent, UploadFileComponent, CreateSongComponent,
     ],
     imports: [
         HttpClientModule,
@@ -76,6 +89,8 @@ export const appRoutes: Routes = [
         NgxAudioPlayerModule,
         FormsModule, ReactiveFormsModule,
         RouterModule.forRoot(appRoutes, {useHash: false}), MatFormFieldModule,
+        AngularFireStorageModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
     ],
     providers: [httpInterceptorProviders],
     bootstrap: [AppComponent]

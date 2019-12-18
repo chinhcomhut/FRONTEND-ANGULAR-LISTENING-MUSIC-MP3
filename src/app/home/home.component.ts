@@ -36,6 +36,11 @@ export class HomeComponent implements OnInit {
       title: 'Starling (by Podington Bear)',
       link: `${this.fmaBaseUrl}/Music_for_Video/Podington_Bear/Solo_Instruments/Podington_Bear_-_Starling.mp3`
     },
+    {
+      title: 'chot nhot',
+      // tslint:disable-next-line:max-line-length
+      link: `https://firebasestorage.googleapis.com/v0/b/chinhbeo-18d3b.appspot.com/o/17bt97q7eld?alt=media&token=21a7e218-7dd7-4924-b21a-9e19640e6560`
+    }
   ];
 
   msaapDisplayTitle = true;
