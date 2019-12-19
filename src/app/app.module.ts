@@ -30,11 +30,38 @@ import { httpInterceptorProviders} from './auth/auth-interceptor';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { UploadAvatarComponent } from './component/upload/upload-avatar/upload-avatar.component';
 import { UploadFileComponent } from './component/upload/upload-file/upload-file.component';
-// import { UploadFormComponent } from './uploads/upload-form/upload-form.component';
+
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
 import { CreateSongComponent } from './component/songManager/create-song/create-song.component';
+import { TitlePageComponent } from './component/layout/title-page/title-page.component';
+import { MenuLeftComponent } from './component/layout/menu-left/menu-left.component';
+import { ContentComponent } from './component/layout/content/content.component';
+import { DetailSongComponent } from './component/songManager/detail-song/detail-song.component';
+import { AboutUsComponent } from './component/layout/about-us/about-us.component';
+import { CarouselComponent } from './component/layout/carousel/carousel.component';
+import {NgbCarouselModule} from '@ng-bootstrap/ng-bootstrap';
+import { HeaderComponent } from './component/layout/header/header.component';
+import { NotGuardComponent } from './component/layout/not-guard/not-guard.component';
+import { SearchComponent } from './component/layout/search/search.component';
+import { FooterComponent } from './component/layout/footer/footer.component';
+import { ListSongComponent } from './component/songManager/list-song/list-song.component';
+import { AllListSongComponent } from './component/songManager/all-list-song/all-list-song.component';
+import { UpdatesingerComponent } from './component/singerManager/updatesinger/updatesinger.component';
+import { SingeraddsongComponent } from './component/singerManager/singeraddsong/singeraddsong.component';
+import { ListSingerUserComponent } from './component/singerManager/list-singer-user/list-singer-user.component';
+import { ListSingerComponent } from './component/singerManager/list-singer/list-singer.component';
+import { CarouselListSingerComponent } from './component/singerManager/carousel-list-singer/carousel-list-singer.component';
+import { CreateSingerComponent } from './component/singerManager/create-singer/create-singer.component';
+import { DetailSingerComponent } from './component/singerManager/detail-singer/detail-singer.component';
+import { AddsongComponent } from './component/playlistManager/addsong/addsong.component';
+import { CreatePlaylistComponent } from './component/playlistManager/create-playlist/create-playlist.component';
+import { ListPlaylistComponent } from './component/playlistManager/list-playlist/list-playlist.component';
+import { PlaylistComponent } from './component/playlistManager/playlist/playlist.component';
+import { UpdatePlaylistComponent } from './component/playlistManager/update-playlist/update-playlist.component';
+import {AuthGuard} from './services/userManager/auth.guard';
+import {AuthService} from './auth/auth.service';
 
 export const appRoutes: Routes = [
     {path: '', component: HomeComponent, data: {title: 'Home'}},
@@ -71,7 +98,7 @@ export const appRoutes: Routes = [
     },
     {
         path: 'createmusic',
-        component: CreateSongComponent
+        component: CreateSongComponent, canActivate: [AuthGuard]
     }
 ];
 
@@ -79,7 +106,8 @@ export const appRoutes: Routes = [
     declarations: [
         // tslint:disable-next-line:max-line-length
         AppComponent, HomeComponent, GettingStartedComponent, ListComponent, LoginComponent, RegisterComponent,
-        UserComponent, PmComponent, AdminComponent, UploadAvatarComponent, UploadFileComponent, CreateSongComponent,
+        // tslint:disable-next-line:max-line-length
+        UserComponent, PmComponent, AdminComponent, UploadAvatarComponent, UploadFileComponent, CreateSongComponent, TitlePageComponent, MenuLeftComponent, ContentComponent, DetailSongComponent, AboutUsComponent, CarouselComponent, HeaderComponent, NotGuardComponent, SearchComponent, FooterComponent, ListSongComponent, AllListSongComponent, UpdatesingerComponent, SingeraddsongComponent, ListSingerUserComponent, ListSingerComponent, CarouselListSingerComponent, CreateSingerComponent, DetailSingerComponent, AddsongComponent, CreatePlaylistComponent, ListPlaylistComponent, PlaylistComponent, UpdatePlaylistComponent,
     ],
     imports: [
         HttpClientModule,
@@ -90,9 +118,9 @@ export const appRoutes: Routes = [
         FormsModule, ReactiveFormsModule,
         RouterModule.forRoot(appRoutes, {useHash: false}), MatFormFieldModule,
         AngularFireStorageModule,
-        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireModule.initializeApp(environment.firebaseConfig), NgbCarouselModule,
     ],
-    providers: [httpInterceptorProviders],
+    providers: [httpInterceptorProviders, AuthGuard, AuthService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

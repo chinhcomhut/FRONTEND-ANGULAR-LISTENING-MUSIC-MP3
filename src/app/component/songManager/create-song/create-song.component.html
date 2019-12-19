@@ -1,25 +1,25 @@
-<!--<app-title-page [content]="title"></app-title-page>-->
+<app-title-page [content]="title"></app-title-page>
 <div class="container">
     <div class="container-fluid row">
-<!--        <div class="col-3">-->
-<!--            <app-menu-left></app-menu-left>-->
-<!--        </div>-->
+        <div class="col-3">
+            <app-menu-left></app-menu-left>
+        </div>
         <div class="col-5" style="margin-bottom: 10px">
             <form (ngSubmit)="createSong()" [formGroup]="songForm">
                 <div class="form-group">
                     <label>Tên bài hát: </label>
-                    <input type="text" class="form-control" [(ngModel)]="song.nameSong" [ngModelOptions]="{standalone: true}"
+                    <input type="text" class="form-control" [(ngModel)]="song.nameSong" formControlName="nameSong"
                            placeholder="Nhập vào tên bài hát">
                 </div>
                 <div class="form-group">
                     <label>Tên ca sĩ: </label>
-                    <input type="text" class="form-control" [(ngModel)]="song.singer" [ngModelOptions]="{standalone: true}"
+                    <input type="text" class="form-control" [(ngModel)]="song.singer" formControlName="singer"
                            placeholder="Nhập vào tên ca sĩ">
                 </div>
 
                 <div class="form-group">
                     <label>Thể Loại: </label>
-                    <input type="text" class="form-control" [(ngModel)]="song.category" [ngModelOptions]="{standalone: true}"
+                    <input type="text" class="form-control" [(ngModel)]="song.category" formControlName="category"
                            placeholder="Nhập vào thể loại nhạc">
                 </div>
 

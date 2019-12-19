@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { TokenStorageService} from './auth/token-storage.service';
+import {Song} from './model/song/song';
+import {SongService} from './services/song/song.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +12,10 @@ export class AppComponent implements OnInit {
   title = 'ngx-audio-player-demo';
 private roles: string[];
 private authority: string;
-constructor(private tokenStorage: TokenStorageService) {
+songList: Song[] = [];
+info: any;
+constructor(private tokenStorage: TokenStorageService,
+            private songService: SongService) {
 }
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -23,9 +28,19 @@ constructor(private tokenStorage: TokenStorageService) {
           this.authority = 'pm';
           return false;
         }
-        this.authority = 'user';
-        return true;
+        if ( role === 'ROLE_USER') {
+          this.authority = 'user';
+          return true;
+        }
       });
     }
+    this.info = {
+      token: this.tokenStorage.getToken(),
+      username: this.tokenStorage.getUsername(),
+      authorities: this.tokenStorage.getAuthorities()
+    };
+  }
+  updateSong(songs: Song[]) {
+  this.songList = songs;
   }
 }

@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import {AngularFireStorage, AngularFireStorageReference} from '@angular/fire/storage';
 import {HttpClient} from '@angular/common/http';
+import {SongService} from "../../../services/song/song.service";
 
 
 @Component({
@@ -16,7 +17,11 @@ export class UploadAvatarComponent implements OnInit {
     @Output()
     giveURLtoCreate = new EventEmitter<string>();
 
-    constructor(private httpClient: HttpClient, private afStorage: AngularFireStorage) {
+    @Output() sendAvatarUrl = new EventEmitter<string>();
+
+    constructor(private httpClient: HttpClient,
+                private afStorage: AngularFireStorage,
+                private songService: SongService) {
     }
 
     ngOnInit() {
@@ -27,6 +32,7 @@ export class UploadAvatarComponent implements OnInit {
     }
 
     onUpload() {
+        console.log('upload file');
         const id = Math.random().toString(36).substring(2); // Create a random string
         this.ref = this.afStorage.ref(id);
         this.ref.put(this.selectedFile)
@@ -36,7 +42,8 @@ export class UploadAvatarComponent implements OnInit {
             .then(downloadURL => {
                 this.downloadURL = downloadURL;
                 this.giveURLtoCreate.emit(this.downloadURL);
-                // console.log(downloadURL);
+                console.log(downloadURL);
+                this.sendAvatarUrl.emit(downloadURL);
                 return downloadURL;
             })
             .catch(error => {

@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {Song} from '../../../model/song/song';
 import {Router} from '@angular/router';
 import {SongService} from '../../../services/song/song.service';
+import {TokenStorageService} from '../../../auth/token-storage.service';
 
 @Component({
   selector: 'app-create-song',
@@ -15,9 +16,11 @@ export class CreateSongComponent implements OnInit {
 
   songForm: FormGroup;
   song: Partial<Song>;
+  avatarUrl: string;
 
   constructor(private router: Router,
-              private service: SongService) {
+              private service: SongService,
+              private tokenService: TokenStorageService) {
     this.songForm = new FormGroup({
       avatarUrl: new FormControl(''),
       category: new FormControl(''),
@@ -34,7 +37,7 @@ export class CreateSongComponent implements OnInit {
       singer: '',
       lyrics: '',
       mp3Url: '',
-      describes: ''
+      describes: '',
     };
   }
 
@@ -53,12 +56,17 @@ export class CreateSongComponent implements OnInit {
     console.log(this.song);
     this.service.createSong(this.song).subscribe(() => {
           alert('Bạn đã thêm thành công Bài Hát');
-          this.router.navigate(['/home']);
+          this.router.navigate(['/']);
         }, error => {
           console.log(error),
               alert('Bạn chưa thêm thành công');
         }
     );
+  }
+
+  getAvatarUrl(avatarUrl: string){
+    this.avatarUrl = avatarUrl;
+    console.log(avatarUrl);
   }
 
 }
