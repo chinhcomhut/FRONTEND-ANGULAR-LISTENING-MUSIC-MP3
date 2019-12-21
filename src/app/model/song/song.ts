@@ -9,9 +9,9 @@ export class Song {
     lyrics: string;
     likeSong: number;
     listenSong: number;
-    user: {
-        id: number;
-    };
+    // user: {
+    //     id: number;
+    // };
 
     constructor(
         id: number,

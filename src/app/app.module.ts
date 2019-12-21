@@ -62,6 +62,7 @@ import { PlaylistComponent } from './component/playlistManager/playlist/playlist
 import { UpdatePlaylistComponent } from './component/playlistManager/update-playlist/update-playlist.component';
 import {AuthGuard} from './services/userManager/auth.guard';
 import {AuthService} from './auth/auth.service';
+import {MatSortModule} from '@angular/material/sort';
 
 export const appRoutes: Routes = [
     {path: '', component: HomeComponent, data: {title: 'Home'}},
@@ -99,7 +100,8 @@ export const appRoutes: Routes = [
     {
         path: 'createmusic',
         component: CreateSongComponent, canActivate: [AuthGuard]
-    }
+    },
+    {path: 'home/song/play/:id', component: DetailSongComponent}
 ];
 
 @NgModule({
@@ -118,7 +120,7 @@ export const appRoutes: Routes = [
         FormsModule, ReactiveFormsModule,
         RouterModule.forRoot(appRoutes, {useHash: false}), MatFormFieldModule,
         AngularFireStorageModule,
-        AngularFireModule.initializeApp(environment.firebaseConfig), NgbCarouselModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig), NgbCarouselModule, MatSortModule,
     ],
     providers: [httpInterceptorProviders, AuthGuard, AuthService],
     bootstrap: [AppComponent]
