@@ -64,6 +64,7 @@ import {AuthGuard} from './services/userManager/auth.guard';
 import {AuthService} from './auth/auth.service';
 import {MatSortModule} from '@angular/material/sort';
 import {NgxAudioPlayerModule} from '../../projects/ngx-audio-player/src/lib/ngx-audio-player.module';
+import {DragDropModule} from "@angular/cdk/drag-drop";
 export const appRoutes: Routes = [
     {path: '', component: HomeComponent, data: {title: 'Home'}},
     {path: 'guide/getting-started', component: GettingStartedComponent, data: {title: 'Getting Started'}},
@@ -120,7 +121,7 @@ export const appRoutes: Routes = [
         FormsModule, ReactiveFormsModule,
         RouterModule.forRoot(appRoutes, {useHash: false}), MatFormFieldModule,
         AngularFireStorageModule,
-        AngularFireModule.initializeApp(environment.firebaseConfig), NgbCarouselModule, MatSortModule, NgxAudioPlayerModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig), NgbCarouselModule, MatSortModule, NgxAudioPlayerModule, DragDropModule,
     ],
     entryComponents: [UserComponent],
     providers: [httpInterceptorProviders, AuthGuard, AuthService],
