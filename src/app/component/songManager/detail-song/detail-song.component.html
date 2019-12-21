@@ -95,14 +95,20 @@
                     <img src="{{song.avatarUrl}}"width="100"height="100">
                     <mat-icon svgIcon="thumbs-up" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon>
                 </mat-card-header>
-                <a (click)="likeCount(song.id)"style="color: mediumvioletred; margin-left: 10px;text-decoration: none;" class="docs-button mat-raised-button" mat-raised-button=""
-                   tabindex="0" aria-disabled="false"
-                ><mat-icon aria-hidden="false" aria-label="Example home icon">thumb_up</mat-icon>{{song.likeSong}}
+                <div>
+                    <a (click)="likeCount(song.id)"style="color: mediumvioletred; margin-left: 10px;text-decoration: none;" class="docs-button mat-raised-button" mat-raised-button=""
+                       tabindex="0" aria-disabled="false"
+                    ><mat-icon aria-hidden="false" aria-label="Example home icon">thumb_up</mat-icon>{{song.likeSong}}
 
 
-                    <!--            <div class="mat-button-ripple mat-ripple" matripple=""></div>-->
-                    <!--            <div class="mat-button-focus-overlay"></div>-->
-                </a>
+                        <!--            <div class="mat-button-ripple mat-ripple" matripple=""></div>-->
+                        <!--            <div class="mat-button-focus-overlay"></div>-->
+                    </a>   <share-buttons style="margin-left: 8px" [theme]="'material-light'" [include]="['facebook']"
+                                          [show]="6" [size]="2" [url]="'https://github.com/chinhcomhut'" [title]="'Angular Audio Player'"></share-buttons>
+
+
+                </div>
+
                 <mat-card-content class="row justify-contents-around mat-basic-player">
                     <div class="col py-3 pl-5" >
                         <mat-icon svgIcon="thumbs-up" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon>
@@ -121,9 +127,12 @@
                     </div>
                     <div class="col">
                         <mat-basic-audio-player class="col-12 col-md-6" [audioUrl]="song.mp3Url" [title]="song.lyrics"
-                                                [autoPlay]="true" muted="muted" (click)="listenCounter"
+                                                [autoPlay]="true" muted="muted"(click)="listenCounter"
                                                 [displayTitle]="msbapDisplayTitle"
-                                                [displayVolumeControls]="msbapDisplayVolumeControls"></mat-basic-audio-player>
+                                                [displayVolumeControls]="msbapDisplayVolumeControls">
+
+                        </mat-basic-audio-player>
+
                     </div>
                 </mat-card-content>
                 <div>

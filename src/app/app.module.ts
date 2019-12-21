@@ -19,7 +19,7 @@ import {
 import {HomeComponent} from './home/home.component';
 import {GettingStartedComponent} from './gettingstarted/gettingstarted.component';
 import {HttpClientModule} from '@angular/common/http';
-import {NgxAudioPlayerModule} from 'ngx-audio-player';
+// import {NgxAudioPlayerModule} from 'ngx-audio-player';
 import {ListComponent} from './list/list.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -63,7 +63,7 @@ import { UpdatePlaylistComponent } from './component/playlistManager/update-play
 import {AuthGuard} from './services/userManager/auth.guard';
 import {AuthService} from './auth/auth.service';
 import {MatSortModule} from '@angular/material/sort';
-
+import {NgxAudioPlayerModule} from '../../projects/ngx-audio-player/src/lib/ngx-audio-player.module';
 export const appRoutes: Routes = [
     {path: '', component: HomeComponent, data: {title: 'Home'}},
     {path: 'guide/getting-started', component: GettingStartedComponent, data: {title: 'Getting Started'}},
@@ -120,10 +120,11 @@ export const appRoutes: Routes = [
         FormsModule, ReactiveFormsModule,
         RouterModule.forRoot(appRoutes, {useHash: false}), MatFormFieldModule,
         AngularFireStorageModule,
-        AngularFireModule.initializeApp(environment.firebaseConfig), NgbCarouselModule, MatSortModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig), NgbCarouselModule, MatSortModule, NgxAudioPlayerModule,
     ],
+    entryComponents: [UserComponent],
     providers: [httpInterceptorProviders, AuthGuard, AuthService],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent, UserComponent]
 })
 export class AppModule {
     constructor() {

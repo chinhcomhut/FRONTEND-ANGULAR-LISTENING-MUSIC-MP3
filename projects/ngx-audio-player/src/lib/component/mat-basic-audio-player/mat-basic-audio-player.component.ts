@@ -18,11 +18,12 @@ export class MatBasicAudioPlayerComponent extends BaseAudioPlayerFunctions imple
     displayTitle = false;
 
     @Input()
-    autoPlay = false;
+    autoPlay = true;
 
     @Input()
     displayVolumeControls = true;
-
+    @Input()
+    rePlay = false;
     constructor() {
         super();
     }
@@ -31,6 +32,10 @@ export class MatBasicAudioPlayerComponent extends BaseAudioPlayerFunctions imple
         this.bindPlayerEvent();
         if (this.autoPlay) {
             super.play();
+        }
+        this.bindPlayerEvent();
+        if (this.rePlay) {
+           super.replay();
         }
     }
 

@@ -69,5 +69,10 @@ export class BaseAudioPlayerFunctions {
         this.volume = vol;
         this.player.nativeElement.volume = this.volume;
     }
+    replay(): void {
+        setTimeout( () => {
+            this.player.nativeElement.play();
+        }, 20);
+    }
 
 }

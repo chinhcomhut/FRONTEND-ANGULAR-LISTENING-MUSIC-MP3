@@ -13,15 +13,14 @@ import {DomSanitizer} from '@angular/platform-browser';
   templateUrl: './detail-song.component.html',
   styleUrls: ['./detail-song.component.css']
 })
+
 export class DetailSongComponent implements OnInit {
     title = 'Chi Tiết Bài Hát';
     song: Song;
     songInfor: Song[] = [];
     likeCounter = 0;
     listenCounter = 0;
-    // mp3Url = `${this.song.mp3Url}`;
     private fmaBaseUrl = 'https://files.freemusicarchive.org/storage-freemusicarchive-org/music';
-
     // Material Style Basic Audio Player Title and Audio URL
     msbapTitle = 'Night Owl (by Broke For Free)';
     msbapAudioUrl = `${this.fmaBaseUrl}/WFMU/Broke_For_Free/Directionless_EP/Broke_For_Free_-_01_-_Night_Owl.mp3`;
