@@ -20,11 +20,11 @@ export class HomeComponent implements OnInit {
 
   // Material Style Advance Audio Player Playlist
   msaapPlaylist: Track[] = [
-    {
-      title: '1400 (by Yung Kartz)',
+      {
+      title: '1400 (by Yung Kart)',
       link: `${this.fmaBaseUrl}/no_curator/Yung_Kartz/August_2018/Yung_Kartz_-_10_-_1400.mp3`
-    },
-    {
+      },
+      {
       title: 'Epic Song (by BoxCat Games)',
       link: `${this.fmaBaseUrl}/ccCommunity/BoxCat_Games/Nameless_The_Hackers_RPG_Soundtrack/BoxCat_Games_-_10_-_Epic_Song.mp3`
     },

@@ -37,10 +37,17 @@ constructor(private tokenStorage: TokenStorageService,
     this.info = {
       token: this.tokenStorage.getToken(),
       username: this.tokenStorage.getUsername(),
+      avatar: this.tokenStorage.getAvatar(),
       authorities: this.tokenStorage.getAuthorities()
     };
+    this.songService.getSong()
+        .subscribe(next => {
+          this.songList = next;
+        }, error => {
+          console.log(error);
+        });
   }
-  updateSong(songs: Song[]) {
-  this.songList = songs;
+  update(songs: Song[]) {
+    this.songList = songs;
   }
 }

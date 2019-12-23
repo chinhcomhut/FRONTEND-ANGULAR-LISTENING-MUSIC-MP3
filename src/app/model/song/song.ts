@@ -1,14 +1,14 @@
 export class Song {
-    id: number;
-    avatarUrl: string;
-    nameSong: string;
-    singer: string;
-    mp3Url: string;
-    describes: string;
-    category: string;
-    lyrics: string;
-    likeSong: number;
-    listenSong: number;
+    id?: number;
+    avatarUrl?: string;
+    nameSong?: string;
+    singer?: string;
+    mp3Url?: string;
+    describes?: string;
+    category?: string;
+    lyrics?: string;
+    likeSong?: number;
+    listenSong?: number;
     // user: {
     //     id: number;
     // };

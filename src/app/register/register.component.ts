@@ -19,6 +19,9 @@ export class RegisterComponent implements OnInit {
   constructor(private authService: AuthService, private route: Router) { }
 
   ngOnInit() { }
+    // onAvatar($event) {
+    //     this.signupInfo.avatarUrl = $event;
+    // }
 
   onSubmit() {
     console.log(this.form);

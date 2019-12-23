@@ -35,29 +35,35 @@ export class DetailSongComponent implements OnInit {
     //         link: `${this.song.mp3Url}`
     //     }
     // ];
-    msaapPlaylist: Track[] = [
-        {
-            title: '1400 (by Yung Kartz)',
-            link: `${this.fmaBaseUrl}/no_curator/Yung_Kartz/August_2018/Yung_Kartz_-_10_-_1400.mp3`
-        },
-        {
-            title: 'Epic Song (by BoxCat Games)',
-            link: `${this.fmaBaseUrl}/ccCommunity/BoxCat_Games/Nameless_The_Hackers_RPG_Soundtrack/BoxCat_Games_-_10_-_Epic_Song.mp3`
-        },
-        {
-            title: 'Hachiko (The Faithful Dog) (by The Kyoto)',
-            link: `${this.fmaBaseUrl}/ccCommunity/The_Kyoto_Connection/Wake_Up/The_Kyoto_Connection_-_09_-_Hachiko_The_Faithtful_Dog.mp3`
-        },
-        {
-            title: 'Starling (by Podington Bear)',
-            link: `${this.fmaBaseUrl}/Music_for_Video/Podington_Bear/Solo_Instruments/Podington_Bear_-_Starling.mp3`
-        },
-        {
-            title: 'chot nhot',
-            // tslint:disable-next-line:max-line-length
-            link: `https://firebasestorage.googleapis.com/v0/b/chinhbeo-18d3b.appspot.com/o/17bt97q7eld?alt=media&token=21a7e218-7dd7-4924-b21a-9e19640e6560`
-        }
-    ];
+    // msList: Track[] = [
+    //     {
+    //         title: `${this.song.lyrics}`,
+    //         link: `${this.song.mp3Url}`
+    //     }
+    // ];
+    // msaapPlaylist: Track[] = [
+    //     {
+    //         title: '1400 (by Yung Kartz)',
+    //         link: `${this.fmaBaseUrl}/no_curator/Yung_Kartz/August_2018/Yung_Kartz_-_10_-_1400.mp3`
+    //     },
+    //     {
+    //         title: 'Epic Song (by BoxCat Games)',
+    //         link: `${this.fmaBaseUrl}/ccCommunity/BoxCat_Games/Nameless_The_Hackers_RPG_Soundtrack/BoxCat_Games_-_10_-_Epic_Song.mp3`
+    //     },
+    //     {
+    //         title: 'Hachiko (The Faithful Dog) (by The Kyoto)',
+    //         link: `${this.fmaBaseUrl}/ccCommunity/The_Kyoto_Connection/Wake_Up/The_Kyoto_Connection_-_09_-_Hachiko_The_Faithtful_Dog.mp3`
+    //     },
+    //     {
+    //         title: 'Starling (by Podington Bear)',
+    //         link: `${this.fmaBaseUrl}/Music_for_Video/Podington_Bear/Solo_Instruments/Podington_Bear_-_Starling.mp3`
+    //     },
+    //     {
+    //         title: 'chot nhot',
+    //         // tslint:disable-next-line:max-line-length
+    //         link: `https://firebasestorage.googleapis.com/v0/b/chinhbeo-18d3b.appspot.com/o/17bt97q7eld?alt=media&token=21a7e218-7dd7-4924-b21a-9e19640e6560`
+    //     }
+    // ];
 
     msaapDisplayTitle = true;
     msaapDisplayPlayList = true;
@@ -117,9 +123,6 @@ export class DetailSongComponent implements OnInit {
       this.songService.getSongById(id).subscribe(
           next => {
             this.song = next;
-            console.log(next);
-            console.log(this.song);
-            console.log(this.song.mp3Url);
           },
           error => {
             this.song = null;

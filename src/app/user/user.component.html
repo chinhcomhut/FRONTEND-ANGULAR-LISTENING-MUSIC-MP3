@@ -8,12 +8,48 @@
 <!--                    <strong>Token:</strong> {{info.token}}.-->
                 </p>
                 <button class="btn btn-danger" (click)="logout()">Logout</button>
+                <button class="btn btn-primary" routerLink="/changepass">Change Pass</button>
             </div>
             <ng-template #loggedOut>
                 Please login.
             </ng-template>
         </div>
-        <app-list-song></app-list-song>
+        <div>
+            <div class="mt-2">
+                <app-search (press)="update($event)"></app-search>
+            </div>
+            <hr>
+            <div>
+                <h3 routerLink="#" class="mb-5 mt-2" style="color: deeppink; font-weight: bold">
+                    <img src="./assets/img/bg-img/new.jpg" style="width: 7%">
+                    Bài Hát Mới Nhất
+                </h3>
+            </div>
+            <div class="row mt-3">
+
+                <div class="col-2" *ngFor="let song of songList">
+                    <div [routerLink]="['/home/song/play',song.id]"
+                         class="rounded mb-4 play portfolio-effect__item portfolio-item--eff1"
+                         style="width: 150px;height: 150px">
+                        <img class="img-fluid portfolio-item__image"
+                             src="{{song.avatarUrl}}">
+<!--                             alt="{{song.nameSong}}">-->
+                        <div class="portfolio-item__info">
+                            <i class="fas fa-play-circle fa-3x"></i>
+                        </div>
+                    </div>
+                    <a [routerLink]="['/home/song/play',song.id]" class="font-weight-bold mb-3" style="font-size: 14px">
+                        <strong>{{song.nameSong}}</strong>
+                    </a>
+                    <p style="font-size: 70%" class="mt-3">Ca sĩ - <a class="font-weight-bold">{{song.singer}}</a></p>
+                    <p style="font-size: 70%">Thể loại - <a class="font-weight-bold">{{song.category}}</a></p>
+                </div>
+
+            </div>
+        </div>
+
+        <hr>
+<!--        <app-list-song></app-list-song>-->
 <!--        <a  routerLink="/uploadfile"style="color: mediumvioletred; margin-left: 10px;text-decoration: none;" class="docs-button mat-raised-button" mat-raised-button=""-->
 <!--           tabindex="0" aria-disabled="false"-->
 <!--        ><mat-icon aria-hidden="false" aria-label="Example home icon">star half</mat-icon>-->
@@ -24,4 +60,4 @@
 <!--            &lt;!&ndash;            <div class="mat-button-focus-overlay"></div>&ndash;&gt;-->
 <!--        </a>-->
 
-
+<!--<app-change-pass></app-change-pass>-->

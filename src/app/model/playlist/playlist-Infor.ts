@@ -1,5 +1,6 @@
 import {Song} from '../song/song';
-import {SignUpInfo} from '../userManager/Signup-Infor';
+// import {SignUpInfo} from '../userManager/Signup-Infor';
+import {SignUpInfo} from '../../auth/signup-info';
 
 export class PlaylistInfor {
     id: number;

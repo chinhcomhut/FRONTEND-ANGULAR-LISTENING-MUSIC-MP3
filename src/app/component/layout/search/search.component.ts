@@ -33,7 +33,6 @@ export class SearchComponent implements OnInit {
         .subscribe(next => {
           this.songs = next;
           this.name = this.name.filter((value, i, self) => self.indexOf(value) === i);
-          console.log(this.name);
         });
   }
 

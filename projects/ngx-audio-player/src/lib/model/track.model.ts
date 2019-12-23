@@ -1,5 +1,9 @@
 export class Track {
-  index?: number;
+  // id: number;
   link: string;
   title: string;
+  index: number;
+}
+
+class TrackImpl extends Track {
 }

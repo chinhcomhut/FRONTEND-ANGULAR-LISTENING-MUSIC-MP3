@@ -64,7 +64,7 @@ export class CreateSongComponent implements OnInit {
     );
   }
 
-  getAvatarUrl(avatarUrl: string){
+  getAvatarUrl(avatarUrl: string) {
     this.avatarUrl = avatarUrl;
     console.log(avatarUrl);
   }

@@ -33,10 +33,10 @@ export class MatBasicAudioPlayerComponent extends BaseAudioPlayerFunctions imple
         if (this.autoPlay) {
             super.play();
         }
-        this.bindPlayerEvent();
-        if (this.rePlay) {
-           super.replay();
-        }
+        // this.bindPlayerEvent();
+        // if (this.rePlay) {
+        //    super.replay();
+        // }
     }
 
     resetSong(): void {
