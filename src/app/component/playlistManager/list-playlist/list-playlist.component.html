@@ -23,9 +23,9 @@
                     <td><a class="namesong" [routerLink]="['/my-playlist/',playlist.id]">{{ playlist.playlistName }}</a></td>
                     <!--          <td>{{playlist.id}}</td>-->
                     <td>
-                        <button class="btn btn-danger mr-1" [routerLink]="['/update-playlist/', playlist.id]">Sửa</button>
-                        <button class="btn btn-danger mr-1" (click)="deleteSong(playlist.id)">Xóa</button>
-                        <button class="btn btn-danger" [routerLink]="['/add-song/',playlist.id]">Add Song</button>
+                        <button class="btn btn-success mr-1" [routerLink]="['/update-playlist/', playlist.id]">Sửa</button>
+                        <button class="btn btn-primary" style="margin-left: 50px" [routerLink]="['/add-song/:id',playlist.id]">Add Song</button>
+                        <button class="btn btn-danger mr-1" style="margin-left: 70px" (click)="deleteSong(playlist.id)">Xóa</button>
                     </td>
                 </tr>
                 </tbody>

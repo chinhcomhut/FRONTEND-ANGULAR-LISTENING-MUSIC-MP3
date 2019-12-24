@@ -110,8 +110,16 @@ export const appRoutes: Routes = [
     {path: 'home/song/play/:id', component: DetailSongComponent},
     {path: 'changepass', component: ChangePassComponent},
     {path: 'listPlayer/:id', component: DetailPlayerComponent},
-
-
+    {path: 'create-playlist', component: CreatePlaylistComponent, canActivate: [AuthGuard]},
+    {path: 'list-playlist', component: ListPlaylistComponent, canActivate: [AuthGuard]},
+    {path: 'add-song/:id', component: AddsongComponent, canActivate: [AuthGuard]},
+    {path: 'update-playlist/:id', component: UpdatePlaylistComponent, canActivate: [AuthGuard]},
+    {path: 'my-playlist/:id', component: PlaylistComponent},
+    {path: 'create-singer', component: CreateSingerComponent, canActivate: [AuthGuard]},
+    {path: 'detail-singer/:id', component: DetailSingerComponent},
+    {path: 'list-singer', component: ListSingerComponent},
+    {path: 'error404', component: NotGuardComponent},
+    {path: '', redirectTo: '/home', pathMatch: 'full'}
 ];
 
 @NgModule({

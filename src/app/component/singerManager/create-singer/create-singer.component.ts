@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
-import {SingerInfo} from "../../../model/singer/singer-info";
-import {Router} from "@angular/router";
-import {SingerManagerService} from "../../../services/singerManager/singer-manager.service";
+import {FormControl, FormGroup} from '@angular/forms';
+import {SingerInfo} from '../../../model/singer/singer-info';
+import {Router} from '@angular/router';
+import {SingerManagerService} from '../../../services/singerManager/singer-manager.service';
 
 @Component({
   selector: 'app-create-singer',

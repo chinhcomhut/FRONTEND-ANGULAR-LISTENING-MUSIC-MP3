@@ -151,9 +151,9 @@
                         <img class="img-fluid portfolio-item__image"
                              src="{{singer.singerAvatar}}"
                              alt="{{singer.nameSinger}}">
-                        <div class="portfolio-item__info">
-                            <i class="fas fa-play-circle fa-3x"></i>
-                        </div>
+<!--                        <div class="portfolio-item__info">-->
+<!--                            <i class="fas fa-play-circle fa-3x"></i>-->
+<!--                        </div>-->
                     </div>
                     <h4 [routerLink]="['/detail-singer',singer.id]" class="font-weight-bold mb-3" style="font-size: 80%">
                         <strong>{{singer.nameSinger}}</strong></h4>
@@ -232,40 +232,40 @@
     </div>
 </div>
 <br>
-<div class="container">
-    <div class="row">
-        <div class="col-12" style="margin-top: 20px;">
-            <mat-card style="background-color: #f8f8f8; margin: 50px 0;">
-                <mat-card-header>
-                    <mat-card-title>Material Style Basic Audio Player</mat-card-title>
-                    <mat-card-subtitle>Material Style Basic Audio Player</mat-card-subtitle>
-                </mat-card-header>
-                <mat-card-content class="row justify-contents-around mat-basic-player">
-                    <div class="col py-3 pl-5">
-                        <h6>Controls</h6>
-                        <div class="d-flex flex-row px-3">
-                            displayTitle:
-                            <mat-checkbox class="px-3 mat-basic-player-display-title" [checked]="msbapDisplayTitle"
-                                          (change)="changeMsbapDisplayTitle($event)">{{msbapDisplayTitle}}</mat-checkbox>
-                        </div>
-                        <div class="d-flex flex-row px-3">
-                            displayVolumeControls:
-                            <mat-checkbox class="px-3 mat-basic-player-display-title"
-                                          [checked]="msbapDisplayVolumeControls"
-                                          (change)="changeMsbapDisplayVolumeControls($event)">{{msbapDisplayVolumeControls}}</mat-checkbox>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <mat-basic-audio-player class="col-12 col-md-6" [audioUrl]="msbapAudioUrl" [title]="msbapTitle"
-                                                [autoPlay]="false" muted="muted"
-                                                [displayTitle]="msbapDisplayTitle"
-                                                [displayVolumeControls]="msbapDisplayVolumeControls"></mat-basic-audio-player>
-                    </div>
-                </mat-card-content>
-                <div>
-                </div>
-            </mat-card>
-        </div>
+<!--<div class="container">-->
+<!--    <div class="row">-->
+<!--        <div class="col-12" style="margin-top: 20px;">-->
+<!--            <mat-card style="background-color: #f8f8f8; margin: 50px 0;">-->
+<!--                <mat-card-header>-->
+<!--                    <mat-card-title>Material Style Basic Audio Player</mat-card-title>-->
+<!--                    <mat-card-subtitle>Material Style Basic Audio Player</mat-card-subtitle>-->
+<!--                </mat-card-header>-->
+<!--                <mat-card-content class="row justify-contents-around mat-basic-player">-->
+<!--                    <div class="col py-3 pl-5">-->
+<!--                        <h6>Controls</h6>-->
+<!--                        <div class="d-flex flex-row px-3">-->
+<!--                            displayTitle:-->
+<!--                            <mat-checkbox class="px-3 mat-basic-player-display-title" [checked]="msbapDisplayTitle"-->
+<!--                                          (change)="changeMsbapDisplayTitle($event)">{{msbapDisplayTitle}}</mat-checkbox>-->
+<!--                        </div>-->
+<!--                        <div class="d-flex flex-row px-3">-->
+<!--                            displayVolumeControls:-->
+<!--                            <mat-checkbox class="px-3 mat-basic-player-display-title"-->
+<!--                                          [checked]="msbapDisplayVolumeControls"-->
+<!--                                          (change)="changeMsbapDisplayVolumeControls($event)">{{msbapDisplayVolumeControls}}</mat-checkbox>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col">-->
+<!--                        <mat-basic-audio-player class="col-12 col-md-6" [audioUrl]="msbapAudioUrl" [title]="msbapTitle"-->
+<!--                                                [autoPlay]="false" muted="muted"-->
+<!--                                                [displayTitle]="msbapDisplayTitle"-->
+<!--                                                [displayVolumeControls]="msbapDisplayVolumeControls"></mat-basic-audio-player>-->
+<!--                    </div>-->
+<!--                </mat-card-content>-->
+<!--                <div>-->
+<!--                </div>-->
+<!--            </mat-card>-->
+<!--        </div>-->
 <!--        <div class="col-12" style="margin-top: 20px;">-->
 <!--            <mat-card style="background-color: #f4f4f4; margin-bottom: 70px;">-->
 <!--                <mat-card-header>-->
@@ -305,6 +305,6 @@
 <!--                </mat-card-content>-->
 <!--            </mat-card>-->
 <!--        </div>-->
-    </div>
-</div>
+<!--    </div>-->
+<!--</div>-->
 <app-footer></app-footer>

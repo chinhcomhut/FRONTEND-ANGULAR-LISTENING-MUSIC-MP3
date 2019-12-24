@@ -39,6 +39,7 @@ export class CreatePlaylistComponent implements OnInit {
   createPlaylist() {
     console.log(this.playlist);
     this.playlistService.createPlaylist(this.playlist).subscribe(() => {
+      alert('Create playlist success!')
       this.router.navigate(['/list-playlist']);
     }, error => console.log(error));
   }

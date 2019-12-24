@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Song} from '../../../model/song/song';
-import {PlaylistInfor} from '../../../model/playlist/playlist-Infor';
 import {SongService} from '../../../services/song/song.service';
 import {PlaylistService} from '../../../services/playlistManager/playlist.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {PlaylistInfor} from '../../../model/playlist/playlist-Infor';
 
 @Component({
   selector: 'app-addsong',
@@ -26,6 +26,7 @@ export class AddsongComponent implements OnInit {
   ngOnInit() {
 
     this.routes.paramMap.subscribe(paramMap => {
+      console.log(paramMap + 'chinh')
       this.id = +paramMap.get('id');
       this.playlistService.getPlayListById(this.id).subscribe(
           data => {
