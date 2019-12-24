@@ -7,13 +7,16 @@
         <div class="card-body">
                   NEW SONG
             <div>
-                <div class="mt-2">
-                    <app-search (press)="update($event)"></app-search>
-                </div>
+<!--                <div class="mt-2">-->
+                    <mat-toolbar-row>
+                        <app-search (press)="update($event)"></app-search>
+                    </mat-toolbar-row>
+
+<!--                </div>-->
                 <hr>
                 <div>
                     <h3 routerLink="#" class="mb-5 mt-2" style="color: deeppink; font-weight: bold">
-                        <img src="./assets/img/bg-img/new.jpg" style="width: 7%">
+                        <img src="../../../../assets/images/icons/new.jpg" height="70" width="200"/>
                         Bài Hát Mới Nhất
                     </h3>
                 </div>
