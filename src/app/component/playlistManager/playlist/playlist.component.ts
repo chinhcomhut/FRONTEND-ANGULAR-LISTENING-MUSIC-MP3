@@ -22,7 +22,7 @@ export class PlaylistComponent implements OnInit {
     playlist2: Track[] = [];
     msaapPlaylist2: Track[] = [];
 
-  title = 'Danh Sách Bài Hát Trong PLaylist Của Tôi';
+  title = 'Chúc Các Bạn Nghe Nhạc Vui Vẻ';
 
   playlist: PlaylistInfor;
 

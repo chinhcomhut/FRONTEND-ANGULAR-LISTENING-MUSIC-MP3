@@ -8,7 +8,7 @@ import {environment} from '../../../environments/environment';
   providedIn: 'root'
 })
 export class SongService {
-private readonly API_URL_CREATE = environment.URL + '/api/songs/create';
+private readonly API_URL_CREATE = environment.URL + '/api/songs/creates';
   private readonly API_URL_GET = environment.URL + '/api/songs';
   private readonly API_URL_GET_ID = environment.URL + '/api/songs';
   private readonly API_URL_PUT = environment.URL + '/api/songs/update';

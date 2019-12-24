@@ -69,6 +69,7 @@ import { SortPipe } from './component/layout/content/sort.pipe';
 import { ChangePassComponent } from './component/userManager/change-pass/change-pass.component';
 import { PlayerComponent } from './component/player/player.component';
 import { DetailPlayerComponent } from './component/songManager/detail-player/detail-player.component';
+import {MatButtonModule} from "@angular/material/button";
 
 export const appRoutes: Routes = [
     {path: '', component: HomeComponent, data: {title: 'Home'}},
@@ -138,7 +139,7 @@ export const appRoutes: Routes = [
         FormsModule, ReactiveFormsModule,
         RouterModule.forRoot(appRoutes, {useHash: false}), MatFormFieldModule,
         AngularFireStorageModule,
-        AngularFireModule.initializeApp(environment.firebaseConfig), NgbCarouselModule, MatSortModule, NgxAudioPlayerModule, DragDropModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig), NgbCarouselModule, MatSortModule, NgxAudioPlayerModule, DragDropModule, MatButtonModule,
     ],
     entryComponents: [UserComponent],
     providers: [httpInterceptorProviders, AuthGuard, AuthService],
