@@ -57,4 +57,8 @@ private readonly API_URL_CREATE = environment.URL + '/api/songs/creates';
   getSearchSong(nameSong: string): Observable<any> {
     return this.http.get<any>(`${this.searchSong}/${nameSong}`);
   }
+
+  // getSongByUrl(mp3Url: string): Observable<Song> {
+  //   return this.http.get<Song>(`${this.API_URL_GET}/findByUrl/${mp3Url}`);
+  // }
 }

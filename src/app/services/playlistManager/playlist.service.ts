@@ -34,7 +34,7 @@ export class PlaylistService {
   }
 
   updatePlayList(playlist: PlaylistInfor): Observable<any> {
-    return this.http.put<any>(`${this.playlistUpdate}/${playlist.id}`, playlist);
+    return this.http.put<any>(`${this.playlistUpdate}`, playlist);
   }
 
   addSong(playlist: PlaylistInfor): Observable<any> {

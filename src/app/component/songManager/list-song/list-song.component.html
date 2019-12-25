@@ -28,7 +28,11 @@
                     <td><a>{{ song.category }}</a></td>
                     <td>
                         <!--            <button class="btn btn-danger" (click)="editSong(song.id)">Sửa</button>-->
+
                         <button class="btn btn-danger" (click)="deleteSong(song.id)">Xóa</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-success mr-1" [routerLink]="['/update-song/', song.id]">Sửa</button>
                     </td>
                 </tr>
                 </tbody>

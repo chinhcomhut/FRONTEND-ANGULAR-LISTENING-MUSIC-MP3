@@ -69,7 +69,8 @@ import { SortPipe } from './component/layout/content/sort.pipe';
 import { ChangePassComponent } from './component/userManager/change-pass/change-pass.component';
 import { PlayerComponent } from './component/player/player.component';
 import { DetailPlayerComponent } from './component/songManager/detail-player/detail-player.component';
-import {MatButtonModule} from "@angular/material/button";
+import {MatButtonModule} from '@angular/material/button';
+import { UpdateSongComponent } from './component/songManager/update-song/update-song.component';
 
 export const appRoutes: Routes = [
     {path: '', component: HomeComponent, data: {title: 'Home'}},
@@ -123,6 +124,7 @@ export const appRoutes: Routes = [
     {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: 'list-song', component: ListSongComponent, canActivate: [AuthGuard]},
     {path: 'list-singer-users', component: ListSingerUserComponent, canActivate: [AuthGuard]},
+    {path: 'update-song/:id', component: UpdateSongComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({
@@ -130,7 +132,7 @@ export const appRoutes: Routes = [
         // tslint:disable-next-line:max-line-length
         AppComponent, HomeComponent, GettingStartedComponent, ListComponent, LoginComponent, RegisterComponent,
         // tslint:disable-next-line:max-line-length
-        UserComponent, PmComponent, AdminComponent, UploadAvatarComponent, UploadFileComponent, CreateSongComponent, TitlePageComponent, MenuLeftComponent, ContentComponent, DetailSongComponent, AboutUsComponent, CarouselComponent, HeaderComponent, NotGuardComponent, SearchComponent, FooterComponent, ListSongComponent, AllListSongComponent, UpdatesingerComponent, SingeraddsongComponent, ListSingerUserComponent, ListSingerComponent, CarouselListSingerComponent, CreateSingerComponent, DetailSingerComponent, AddsongComponent, CreatePlaylistComponent, ListPlaylistComponent, PlaylistComponent, UpdatePlaylistComponent, SortPipe, ChangePassComponent, PlayerComponent, DetailPlayerComponent,
+        UserComponent, PmComponent, AdminComponent, UploadAvatarComponent, UploadFileComponent, CreateSongComponent, TitlePageComponent, MenuLeftComponent, ContentComponent, DetailSongComponent, AboutUsComponent, CarouselComponent, HeaderComponent, NotGuardComponent, SearchComponent, FooterComponent, ListSongComponent, AllListSongComponent, UpdatesingerComponent, SingeraddsongComponent, ListSingerUserComponent, ListSingerComponent, CarouselListSingerComponent, CreateSingerComponent, DetailSingerComponent, AddsongComponent, CreatePlaylistComponent, ListPlaylistComponent, PlaylistComponent, UpdatePlaylistComponent, SortPipe, ChangePassComponent, PlayerComponent, DetailPlayerComponent, UpdateSongComponent,
     ],
     imports: [
         HttpClientModule,
