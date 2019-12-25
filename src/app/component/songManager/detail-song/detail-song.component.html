@@ -92,7 +92,7 @@
                     <mat-card-title style="color: mediumvioletred"><img src="https://blog.flamingtext.com/blog/2019/12/21/flamingtext_com_1576921613_657209086.gif" border="0" alt="Logo Design by FlamingText.com" title="Logo Design by FlamingText.com">
                     </mat-card-title>
                     <mat-card-subtitle style="color: blue">Bài hát: {{song.nameSong}}</mat-card-subtitle>
-                    <img src="{{song.avatarUrl}}"width="100"height="100">
+                    <img src="{{song.avatarUrl}}"width="200"height="200">
                     <mat-icon svgIcon="thumbs-up" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon>
                 </mat-card-header>
                 <div>
@@ -127,9 +127,9 @@
                     </div>
                     <div class="col">
                         <mat-basic-audio-player class="col-12 col-md-6" [audioUrl]="song.mp3Url" [title]="song.lyrics"
-                                                [autoPlay]="true" muted="muted"(click)="listenCounter"
+                                                [autoPlay]="true" muted="muted"
                                                 [displayTitle]="msbapDisplayTitle"
-                                                [displayVolumeControls]="msbapDisplayVolumeControls">
+                                                [displayVolumeControls]="msbapDisplayVolumeControls">{{listenCounter==listenCounter+1}}
 
                         </mat-basic-audio-player>
 
@@ -139,45 +139,45 @@
                 </div>
             </mat-card>
         </div>
-        <div class="col-12" style="margin-top: 20px;">
-            <mat-card style="background-color: #f4f4f4; margin-bottom: 70px;">
-                <mat-card-header>
-                    <mat-card-title>Material Style Advanced Audio Player</mat-card-title>
-                    <mat-card-subtitle>Material Style Advanced Audio Player</mat-card-subtitle>
-                </mat-card-header>
-                <mat-card-content class="row justify-contents-around">
-                    <div class="col py-3 pl-5">
-                        <h6>Controls</h6>
-                        <div class="d-flex flex-row px-3">
-                            displayTitle:
-                            <mat-checkbox class="px-3 mat-advanced-player-display-title" [checked]="msaapDisplayTitle"
-                                          (change)="changeMsbapDisplayTitle($event)">{{msaapDisplayTitle}}</mat-checkbox>
-                        </div>
-                        <div class="d-flex flex-row px-3">
-                            displayPlayList:
-                            <mat-checkbox class="px-3 mat-advanced-player-display-playlist"
-                                          [checked]="msaapDisplayPlayList"
-                                          (change)="changeMsaapDisplayPlayList($event)">{{msaapDisplayPlayList}}</mat-checkbox>
-                        </div>
-                        <div class="d-flex flex-row px-3">
-                            displayVolumeControls:
-                            <mat-checkbox class="px-3 mat-basic-player-display-title"
-                                          [checked]="msaapDisplayVolumeControls"
-                                          (change)="changeMsaapDisplayVolumeControls($event)">{{msaapDisplayVolumeControls}}</mat-checkbox>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <mat-advanced-audio-player [playlist]=""
-                                                   [displayTitle]="msaapDisplayTitle"
-                                                   [displayPlaylist]="msaapDisplayPlayList" [autoPlay]="false"
-                                                   muted="muted"
-                                                   [pageSizeOptions]="pageSizeOptions"
-                                                   [displayVolumeControls]="msaapDisplayVolumeControls"
-                                                   [expanded]="true"></mat-advanced-audio-player>
-                    </div>
-                </mat-card-content>
-            </mat-card>
-        </div>
-    </div>
-</div>
+<!--        <div class="col-12" style="margin-top: 20px;">-->
+<!--            <mat-card style="background-color: #f4f4f4; margin-bottom: 70px;">-->
+<!--                <mat-card-header>-->
+<!--                    <mat-card-title>Material Style Advanced Audio Player</mat-card-title>-->
+<!--                    <mat-card-subtitle>Material Style Advanced Audio Player</mat-card-subtitle>-->
+<!--                </mat-card-header>-->
+<!--                <mat-card-content class="row justify-contents-around">-->
+<!--                    <div class="col py-3 pl-5">-->
+<!--                        <h6>Controls</h6>-->
+<!--                        <div class="d-flex flex-row px-3">-->
+<!--                            displayTitle:-->
+<!--                            <mat-checkbox class="px-3 mat-advanced-player-display-title" [checked]="msaapDisplayTitle"-->
+<!--                                          (change)="changeMsbapDisplayTitle($event)">{{msaapDisplayTitle}}</mat-checkbox>-->
+<!--                        </div>-->
+<!--                        <div class="d-flex flex-row px-3">-->
+<!--                            displayPlayList:-->
+<!--                            <mat-checkbox class="px-3 mat-advanced-player-display-playlist"-->
+<!--                                          [checked]="msaapDisplayPlayList"-->
+<!--                                          (change)="changeMsaapDisplayPlayList($event)">{{msaapDisplayPlayList}}</mat-checkbox>-->
+<!--                        </div>-->
+<!--                        <div class="d-flex flex-row px-3">-->
+<!--                            displayVolumeControls:-->
+<!--                            <mat-checkbox class="px-3 mat-basic-player-display-title"-->
+<!--                                          [checked]="msaapDisplayVolumeControls"-->
+<!--                                          (change)="changeMsaapDisplayVolumeControls($event)">{{msaapDisplayVolumeControls}}</mat-checkbox>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col">-->
+<!--                        <mat-advanced-audio-player [playlist]=""-->
+<!--                                                   [displayTitle]="msaapDisplayTitle"-->
+<!--                                                   [displayPlaylist]="msaapDisplayPlayList" [autoPlay]="false"-->
+<!--                                                   muted="muted"-->
+<!--                                                   [pageSizeOptions]="pageSizeOptions"-->
+<!--                                                   [displayVolumeControls]="msaapDisplayVolumeControls"-->
+<!--                                                   [expanded]="true"></mat-advanced-audio-player>-->
+<!--                    </div>-->
+<!--                </mat-card-content>-->
+<!--            </mat-card>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 

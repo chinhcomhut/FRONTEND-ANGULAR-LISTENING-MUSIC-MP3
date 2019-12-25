@@ -4,6 +4,7 @@ import {PlaylistService} from '../../../services/playlistManager/playlist.servic
 import {ActivatedRoute} from '@angular/router';
 import {Track} from 'ngx-audio-player';
 import {Song} from '../../../model/song/song';
+import {SongService} from '../../../services/song/song.service';
 
 @Component({
   selector: 'app-playlist',
@@ -11,6 +12,8 @@ import {Song} from '../../../model/song/song';
   styleUrls: ['./playlist.component.css']
 })
 export class PlaylistComponent implements OnInit {
+    songList: Song[] = [];
+    delete: Song;
     song: Song[];
     msaapDisplayTitle = true;
     msaapDisplayPlayList = true;
@@ -21,13 +24,13 @@ export class PlaylistComponent implements OnInit {
     playlist1: Track;
     playlist2: Track[] = [];
     msaapPlaylist2: Track[] = [];
-
   title = 'Chúc Các Bạn Nghe Nhạc Vui Vẻ';
 
   playlist: PlaylistInfor;
 
   constructor(private playlistService: PlaylistService,
-              private routes: ActivatedRoute) {
+              private routes: ActivatedRoute,
+              private songService: SongService) {
   }
 
   ngOnInit() {
@@ -73,5 +76,17 @@ export class PlaylistComponent implements OnInit {
     changeMsaapDisplayVolumeControls(event) {
         this.msaapDisplayVolumeControls = event.checked;
     }
-
+    deleteSong(id: number) {
+        this.songService
+            .deleteSong(id)
+            .subscribe(
+                data => {
+                    this.delete = data;
+                    window.location.reload();
+                },
+                error => {
+                    this.delete = null;
+                }
+            );
+    }
 }

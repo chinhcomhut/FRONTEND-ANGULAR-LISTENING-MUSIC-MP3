@@ -120,7 +120,9 @@ export const appRoutes: Routes = [
     {path: 'detail-singer/:id', component: DetailSingerComponent},
     {path: 'list-singer', component: ListSingerComponent},
     {path: 'error404', component: NotGuardComponent},
-    {path: '', redirectTo: '/home', pathMatch: 'full'}
+    {path: '', redirectTo: '/home', pathMatch: 'full'},
+    {path: 'list-song', component: ListSongComponent, canActivate: [AuthGuard]},
+    {path: 'list-singer-users', component: ListSingerUserComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({

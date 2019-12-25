@@ -3,12 +3,13 @@ import {HttpClient} from '@angular/common/http';
 import {PlaylistInfor} from '../../model/playlist/playlist-Infor';
 import {Observable} from 'rxjs';
 import {environment} from '../../../environments/environment';
+import {Song} from "../../model/song/song";
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlaylistService {
-
+  private readonly API_URL_DELETE = environment.URL + '/api/songs/by';
   private playlistUrl = 'http://localhost:8080/api/playlist';
   private playlistUpdate = 'http://localhost:8080/api/playlist/update';
   private addSong1 = 'http://localhost:8080/api/playlist/addSong';
@@ -43,6 +44,10 @@ export class PlaylistService {
   deletePlayList(id: number): Observable<PlaylistInfor> {
     return this.http.delete<PlaylistInfor>(`${this.playlistUrl}/${id}`);
   }
+  deleteSong(id: number): Observable<PlaylistInfor> {
+    return this.http.delete<PlaylistInfor>(`${this.API_URL_DELETE}/${id}`);
+  }
+
 
   getAllPlayListByUser(): Observable<any> {
     return this.http.get<any>(this.playlistByUser);
